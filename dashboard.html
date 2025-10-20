@@ -10,13 +10,11 @@
     <!-- Wave Background -->
     <div class="wave-bg"></div>
 
-    <!-- Header -->
     <header>
         <h1>Welcome, <span id="user-name"></span>!</h1>
         <button class="logout-btn" onclick="logout()">Logout</button>
     </header>
 
-    <!-- Main Content -->
     <main>
         <div class="cards-container">
             <div class="card">
@@ -49,24 +47,16 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>© 2025 Swim Mind App | Stay motivated, Swim strong!</p>
     </footer>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
     <script>
-        // Display logged-in user
         const loggedInUser = localStorage.getItem('loggedInUser');
-        if (loggedInUser) {
-            document.getElementById('user-name').innerText = loggedInUser;
-        }
-
-        // Redirect to login if not logged in
-        if (!loggedInUser) {
-            window.location.href = 'index.html';
-        }
+        if (!loggedInUser) window.location.href = 'index.html';
+        document.getElementById('user-name').innerText = loggedInUser;
     </script>
 </body>
 </html>
+
