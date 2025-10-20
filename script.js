@@ -1,19 +1,19 @@
 // Show signup form
 function showSignup() {
     document.getElementById('signup-card').style.display = 'block';
-    document.getElementById('login-card').style.display = 'none';
+    document.querySelector('.login-card').style.display = 'none';
 }
 
 // Show login form
 function showLogin() {
     document.getElementById('signup-card').style.display = 'none';
-    document.getElementById('login-card').style.display = 'block';
+    document.querySelector('.login-card').style.display = 'block';
 }
 
 // Signup new user
 function signup() {
-    const username = document.getElementById('new-username').value.trim();
-    const password = document.getElementById('new-password').value.trim();
+    const username = document.getElementById('new-username').value;
+    const password = document.getElementById('new-password').value;
 
     if (!username || !password) {
         document.getElementById('signup-message').innerText = 'Please enter username & password';
@@ -35,8 +35,8 @@ function signup() {
 
 // Login user
 function login() {
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
     let users = JSON.parse(localStorage.getItem('users') || '{}');
 
@@ -48,7 +48,7 @@ function login() {
     }
 }
 
-// Logout
+// Logout user
 function logout() {
     localStorage.removeItem('loggedInUser');
     window.location.href = "index.html";
