@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swim Mind Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Wave Background -->
+    <div class="wave-bg"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome, <span id="user-name"></span>!</h1>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Mood Tracker</h3>
+                <p>Log your daily moods and feelings.</p>
+            </div>
+            <div class="card">
+                <h3>Practice Journal</h3>
+                <p>Keep track of your swimming routines.</p>
+            </div>
+            <div class="card">
+                <h3>Visualization</h3>
+                <p>Practice mental exercises to enhance performance.</p>
+            </div>
+            <div class="card">
+                <h3>Competitions</h3>
+                <p>Track past competitions and results.</p>
+            </div>
+        </div>
+
+        <div class="bottom-cards">
+            <div class="card">
+                <h3>Progress Summary</h3>
+                <p>View overall progress and achievements.</p>
+            </div>
+            <div class="card">
+                <h3>Goals Tracker</h3>
+                <p>Set personal goals and milestones.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Swim Mind App | Stay motivated, Swim strong!</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Display logged-in user
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (loggedInUser) {
+            document.getElementById('user-name').innerText = loggedInUser;
+        }
+
+        // Redirect to login if not logged in
+        if (!loggedInUser) {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
